@@ -13,6 +13,9 @@ public class ExampleWithInnerClass extends Assert {
             staticField = 90;
             nonStaticField = 100;
         }
+
+//        static InnerClass getInstance(){    // inner class doesnt support static declaration
+//        }
     }
 
     static class StaticInnerClass extends InterfaceMarkers {
@@ -25,6 +28,7 @@ public class ExampleWithInnerClass extends Assert {
     }
 
     public static void main(String[] args) {
-
+        InnerClass innerClass;
+        StaticInnerClass staticInnerClass = new StaticInnerClass();
     }
 }

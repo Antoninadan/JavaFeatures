@@ -28,6 +28,9 @@ public class InterfaceClassExample implements InterfaceExample {
     }
 
     public static void main(String[] args) {
+        InterfaceClassExample interfaceClassExample = new InterfaceClassExample();
+        interfaceClassExample.methodBody1();
 
-    }
+
+        }
 }

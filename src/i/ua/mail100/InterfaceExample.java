@@ -7,11 +7,9 @@ public interface InterfaceExample extends Comparable {
     public int FIELD2 = 1;
     String string = "kjbbkjb";
 
-
     public void methodNoBody1();
 
     public void methodNoBody2();
-
 
     default void methodBody1() {
 

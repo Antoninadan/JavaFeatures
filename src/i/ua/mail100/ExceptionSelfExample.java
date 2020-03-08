@@ -1,6 +1,6 @@
 package i.ua.mail100;
 
-public class ExceptionClassExample extends Exception{
+public class ExceptionSelfExample extends Exception{
     @Override
     public String getMessage(){
         return " Subclass exceptions created";

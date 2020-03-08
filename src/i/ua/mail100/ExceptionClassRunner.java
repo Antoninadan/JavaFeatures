@@ -17,14 +17,14 @@ public class ExceptionClassRunner {
         try {
             System.out.println(sum(3, 4));
             System.out.println(sum(5, 6));
-        } catch (ExceptionClassExample | ArrayIndexOutOfBoundsException e) {
+        } catch (ExceptionSelfExample | ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
     }
 
 
-    static int sum(int a, int b) throws ExceptionClassExample {
-        if (a == 5) throw new ExceptionClassExample();
+    static int sum(int a, int b) throws ExceptionSelfExample {
+        if (a == 5) throw new ExceptionSelfExample();
         return a + b;
     }
 }

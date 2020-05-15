@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.exception;
 
 public class ExceptionClassRunner {
     public static void main(String[] args) {
@@ -20,6 +20,19 @@ public class ExceptionClassRunner {
         } catch (ExceptionSelfExample | ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
+
+
+        try {
+            System.out.print("1");
+            throw new RuntimeException("2");
+//            System.out.println("3");
+        } catch (Exception e) {
+            System.out.print("4");
+        } finally {
+            System.out.print("5");
+        }
+
+
     }
 
 

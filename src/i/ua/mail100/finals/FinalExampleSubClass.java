@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.finals;
 
 public class FinalExampleSubClass extends FinalExampleSuperClass{
     public FinalExampleSubClass(int int1) {

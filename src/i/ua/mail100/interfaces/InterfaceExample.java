@@ -1,6 +1,6 @@
-package i.ua.mail100;
+package i.ua.mail100.interfaces;
 
-import java.lang.reflect.Modifier;
+import i.ua.mail100.reflection.ReflectionExample;
 
 public interface InterfaceExample extends Comparable {
     public static final int FIELD1 = 1;

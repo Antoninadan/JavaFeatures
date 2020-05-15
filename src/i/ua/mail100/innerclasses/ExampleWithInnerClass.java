@@ -1,6 +1,7 @@
-package i.ua.mail100;
+package i.ua.mail100.innerclasses;
 
-import java.util.Collections;
+import i.ua.mail100.asserts.Assert;
+import i.ua.mail100.interfaces.InterfaceMarkers;
 
 public class ExampleWithInnerClass extends Assert {
     private static int staticField;

@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.objectmethods;
 
 public class ObjectMethodsRunner {
     public static void main(String[] args) throws CloneNotSupportedException {

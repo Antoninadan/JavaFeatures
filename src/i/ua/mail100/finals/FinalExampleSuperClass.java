@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.finals;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
@@ -39,7 +39,7 @@ public class FinalExampleSuperClass {
         String value = "Old value";
         System.out.println(value);
 
-        //Получаем поле value в классе String
+        //Получаем поле value в классе string
         Field field = value.getClass().getDeclaredField("value");
         //Разрешаем изменять его
         field.setAccessible(true);

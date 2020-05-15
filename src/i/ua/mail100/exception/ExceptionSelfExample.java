@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.exception;
 
 public class ExceptionSelfExample extends Exception{
     @Override

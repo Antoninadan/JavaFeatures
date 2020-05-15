@@ -15,10 +15,10 @@ public class TestRunner {
 //        try {
 //            int x = 0;
 //            int y = 5 / x;
-//        } catch (Exception e) {
-//            System.out.println("Exception");
+//        } catch (exception e) {
+//            System.out.println("exception");
 //        } catch (ArithmeticException ae) {
-//            System.out.println("Arithmetic Exception");
+//            System.out.println("Arithmetic exception");
 //        }
 //        System.out.println("finished");
 

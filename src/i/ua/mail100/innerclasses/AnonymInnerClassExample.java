@@ -1,4 +1,7 @@
-package i.ua.mail100;
+package i.ua.mail100.innerclasses;
+
+import i.ua.mail100.interfaces.InterfaceClassExample;
+import i.ua.mail100.interfaces.InterfaceExample;
 
 public class AnonymInnerClassExample {
     public static void main(String[] args) {

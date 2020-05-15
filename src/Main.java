@@ -1,5 +1,4 @@
-import i.ua.mail100.InterfaceClassExample;
-import i.ua.mail100.ReflectionExample;
+import i.ua.mail100.reflection.ReflectionExample;
 
 public class Main {
     private static final String f = "12313";

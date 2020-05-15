@@ -1,4 +1,6 @@
-package i.ua.mail100;
+package i.ua.mail100.statics;
+
+import i.ua.mail100.TestClass;
 
 public class StaticClassTest {
     static int int1;

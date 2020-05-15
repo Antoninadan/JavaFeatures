@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.reflection;
 
 import java.lang.reflect.Modifier;
 

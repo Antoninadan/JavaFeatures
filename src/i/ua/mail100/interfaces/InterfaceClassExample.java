@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.interfaces;
 
 public class InterfaceClassExample implements InterfaceExample {
 

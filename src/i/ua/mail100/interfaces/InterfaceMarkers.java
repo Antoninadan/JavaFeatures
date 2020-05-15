@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.interfaces;
 
 import java.io.Serializable;
 import java.rmi.Remote;

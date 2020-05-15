@@ -1,4 +1,4 @@
-package i.ua.mail100;
+package i.ua.mail100.clonables;
 
 public class ClonebleExampleRunner {
     public static void main(String[] args) {

@@ -20,7 +20,7 @@ public class ExampleWithInnerClass extends Assert {
     }
 
     static class StaticInnerClass extends InterfaceMarkers {
-        void method() {
+        static void method() {
 //            nonStaticField = 100;
             staticField = 90;
             ExampleWithInnerClass exampleWithInnerClass = new ExampleWithInnerClass();

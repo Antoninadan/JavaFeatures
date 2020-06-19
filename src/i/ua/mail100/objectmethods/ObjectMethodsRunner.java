@@ -13,7 +13,9 @@ public class ObjectMethodsRunner {
         // test clone
         ObjectMethodsExample o1 = new ObjectMethodsExample(100);
         ObjectMethodsExample o2 = o1.clone();
-        System.out.println("o2 = " + o2 + "\n");
+        System.out.println("clone o1 = o2 = " + o2);
+        o1 = new ObjectMethodsExample(200);
+        System.out.println("change clone o1 = " + o2 + "\n");
 
         // test getClass
         Class<?> objectMethodsExampleClass = objectMethodsExample.getClass();

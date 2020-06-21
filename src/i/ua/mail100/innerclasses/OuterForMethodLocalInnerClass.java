@@ -13,6 +13,14 @@ public class OuterForMethodLocalInnerClass {
         }
         Inner inner = new Inner();
         inner.innerMethod();
+
+        { class Inner2 {
+            public void innerMethod() {
+                System.out.println("Метод внутреннего класса " + x);
+            }
+        }}
+
+        // Inner2
     }
 
     public static void main(String[] args) {

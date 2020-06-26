@@ -29,7 +29,7 @@ public class InitClassRunner {
 
     public static void method() { // статический метод
         // метод не вызывается при инициализации
-        System.out.print("статичные метод с именем  method() + a");
+        System.out.print("статичные метод с именем  methodList() + a");
     }
 
     static { // статический блок инициализации

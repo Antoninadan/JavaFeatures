@@ -1,6 +1,6 @@
 package i.ua.mail100.innerclasses;
 
-public class OuterForAnonymousInnerClass {
+public class AnonymousInnerClassExample {
     static Demo demo = new Demo() {
         @Override
         public void show() {

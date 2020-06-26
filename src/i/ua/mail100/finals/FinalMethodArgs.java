@@ -29,8 +29,6 @@ public class FinalMethodArgs {
 
         // not allowed
 //        strings = new ArrayList<>();
-
-        System.out.println(num + str);
     }
 
 }

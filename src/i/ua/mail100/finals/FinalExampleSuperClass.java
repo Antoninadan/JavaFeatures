@@ -32,7 +32,10 @@ public class FinalExampleSuperClass {
         list1.add("fgdsf");
 //        list1 = list2; //ошибка компиляции
 
-
+        // immutable String
+        final String string;
+        string = "dfgdfs";
+//        string = "dfgdfs";
 
 
         // Reflection

@@ -1,6 +1,6 @@
 package i.ua.mail100.innerclasses;
 
-public class OuterForMethodLocalInnerClass {
+public class MethodLocalInnerClassExample {
     void outerMethod() {
         // ONLY FINAL
         final int x = 98;
@@ -24,7 +24,7 @@ public class OuterForMethodLocalInnerClass {
     }
 
     public static void main(String[] args) {
-        OuterForMethodLocalInnerClass outer = new OuterForMethodLocalInnerClass();
+        MethodLocalInnerClassExample outer = new MethodLocalInnerClassExample();
         outer.outerMethod();
     }
 }

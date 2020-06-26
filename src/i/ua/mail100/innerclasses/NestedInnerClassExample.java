@@ -1,14 +1,16 @@
 package i.ua.mail100.innerclasses;
 
-public class OuterForStaticNestedInnerClass {
-    static class NestedInnerClass {
+public class NestedInnerClassExample {
+    class NestedInnerClass {
         public void show() {
             System.out.println("Метод внутреннего класса");
         }
     }
 
     public static void main(String[] args) {
-        OuterForStaticNestedInnerClass.NestedInnerClass inner = new OuterForStaticNestedInnerClass.NestedInnerClass();
+        NestedInnerClassExample.NestedInnerClass inner = new NestedInnerClassExample().new NestedInnerClass();
         inner.show();
+
+
     }
 }

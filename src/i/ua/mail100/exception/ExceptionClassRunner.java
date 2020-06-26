@@ -9,9 +9,10 @@ public class ExceptionClassRunner {
         } catch (ArithmeticException e) {
             System.out.println("Division by zero");
         } finally {
-            System.out.println("But the program is still running");
+            System.out.println("Block finally: But the program is still running");
         }
-        System.out.println("End");
+        System.out.println("After try: End");
+        System.out.println();
 
 
         try {
@@ -20,6 +21,7 @@ public class ExceptionClassRunner {
         } catch (ExceptionSelfExample | ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
+        System.out.println();
 
 
         try {

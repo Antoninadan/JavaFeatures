@@ -17,6 +17,9 @@ public class ObjectMethodsRunner {
         o1 = new ObjectMethodsExample(200);
         System.out.println("change clone o1 = " + o2 + "\n");
 
+
+
+
         // test getClass
         Class<?> objectMethodsExampleClass = objectMethodsExample.getClass();
         System.out.println("objectMethodsExample class = " + objectMethodsExampleClass + "\n");

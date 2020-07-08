@@ -7,34 +7,70 @@ import java.util.List;
 public class SubClass extends SuperClass{
     // allow widen access
     @Override
-    public ArrayList<Integer> methodList(){
+    public ArrayList<Integer> methodList(int b, String a){
         return new ArrayList<>();
     }
 
     // dont shrink return
     @Override
-    ArrayList<Integer> methodArrayList(){
+    ArrayList<Integer> methodArrayList(int b, String a){
         return new ArrayList<>();
     }
 
     // allow delete throws
     @Override
-    Integer methodThrowsException() throws IOException{
+    Integer methodThrowsException(int b, String a) throws IOException{
         return 12;
     }
 
+    // not throw new checked exception
+//    @Override
+//    List<Integer> methodNotThrows(int a, String b) throws IOException{
+//        return new ArrayList<>();
+//    }
+
+    // throw new UNchacked exception
     @Override
-    Integer methodThrowsIOException(){
+    List<Integer> methodNotThrows2(int a, String b) throws RuntimeException{
+        return super.methodNotThrows2(a, b);
+    }
+
+    @Override
+    Integer methodThrowsIOException(int b, String a){
         return 4;
     }
 
-    // allow widen access
-    @Override
-    public void methodProtected() {
-        super.methodProtected();
-    }
 
+    // overload in subclass
     @Override
     void methodSpecificnames(int otherSecond, String otherFirst) {
     }
+    void methodSpecificnames(int otherSecond, String otherFirst, int c) {
+    }
+
+
+    // allow default -> protected -> public
+    @Override
+    protected void methodDefault(int a, String b) {
+        super.methodDefault(a, b);
+    }
+
+    // allow protected -> public
+    @Override
+    public void methodProtected(int b, String a) {
+        super.methodProtected(b, a);
+    }
+
+    // static not override
+//    @Override
+//    static List<Integer> methodStatic(int a, String b){
+//        return new ArrayList<>();
+//    }
+
+    // final not override
+//    @Override
+//    final List<Integer> methodFinal(int a, String b){
+//        return new ArrayList<>();
+//    }
+
 }

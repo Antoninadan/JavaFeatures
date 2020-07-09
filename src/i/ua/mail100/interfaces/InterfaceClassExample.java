@@ -27,10 +27,13 @@ public class InterfaceClassExample implements InterfaceExample {
         return 0;
     }
 
+    @Override
+    public void publicMethod() {
+
+    }
+
     public static void main(String[] args) {
         InterfaceClassExample interfaceClassExample = new InterfaceClassExample();
         interfaceClassExample.methodBody1();
-
-
         }
 }

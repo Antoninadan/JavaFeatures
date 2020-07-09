@@ -8,7 +8,7 @@ public class ReflectionExample {
         Class<?> fileClass = object.getClass();
         int mod = fileClass.getModifiers();
 
-        return "Class name = " + fileClass.getName()
+        return "ModificatorRunner name = " + fileClass.getName()
                 +  (Modifier.isPublic(mod) == true ? " \n public " : "")
                 +  (Modifier.isProtected(mod) == true ? "\n protected " : "")
                 +  (Modifier.isPrivate(mod) == true ? "\n private " : "")

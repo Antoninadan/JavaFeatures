@@ -29,4 +29,16 @@ public interface InterfaceExample extends Comparable {
 
 
 
+    public void publicMethod();
+
+    default void defaultMethod(){
+        System.out.println("Protected method - parent");
+    }
+
+    private void privateMethod(){
+        System.out.println("Private method - parent");
+    }
+
+    final private void finalMethod() {}
+
 }

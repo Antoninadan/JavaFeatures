@@ -39,6 +39,6 @@ public interface InterfaceExample extends Comparable {
         System.out.println("Private method - parent");
     }
 
-    final private void finalMethod() {}
+//     private final void finalMethod() {}
 
 }

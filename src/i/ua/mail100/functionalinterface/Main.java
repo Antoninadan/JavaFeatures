@@ -26,6 +26,9 @@ public class Main {
         Integer[] array = { -2, 1, -1, 4, -3, 5, 6, -8, 9 };
         Arrays.sort(array, (nOne, nTwo) -> Math.abs(nOne) - Math.abs(nTwo));
         System.out.println(Arrays.toString(array));
+
+        FunctionalInterfaceItem fii = (f) -> f + 3;
+        FunctionalInterfaceItem fii1 = (f) -> f - 3;
     }
 }
 

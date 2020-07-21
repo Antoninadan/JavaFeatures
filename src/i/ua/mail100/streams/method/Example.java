@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Example {
-    class People{
+    class People {
         String name;
         int age;
         Sex sex;
@@ -20,9 +20,10 @@ public class Example {
             return age;
         }
     }
-    enum Sex{
-    MAN,
-    WOMEN
+
+    enum Sex {
+        MAN,
+        WOMEN
     }
 
     public static void main(String[] args) {
@@ -32,10 +33,10 @@ public class Example {
                 new Example().new People("Иван Иванович", 69, Sex.MAN));
 
         // Выбрать мужчин-военнообязанных (от 18 до 27 лет)
-        List<People> warriors = people.stream().filter(i -> i.sex==Sex.MAN && i.age > 18).collect(Collectors.toList());
+        List<People> warriors = people.stream().filter(i -> i.sex == Sex.MAN && i.age > 18).collect(Collectors.toList());
 
         // Найти средний возраст среди мужчин
-        double averageAge = people.stream().filter(i -> i.sex==Sex.MAN).mapToInt(People::getAge).average().getAsDouble();
+        double averageAge = people.stream().filter(i -> i.sex == Sex.MAN).mapToInt(People::getAge).average().getAsDouble();
     }
 
 }

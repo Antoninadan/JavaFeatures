@@ -10,10 +10,10 @@ public class ExampleGroupingBy {
     public static void main(String[] args) {
 
         List<Worker> workers = Arrays.asList(
-                new Worker(" ManagerOne", 32, 2300, "manager"),
-                new Worker("Killer", 32, 2300, "killer"),
-                new Worker("ManagerTwo", 32, 2300, "manager"),
-                new Worker("Teacher", 32, 2300, "teacher"));
+                new Worker(" ManagerOneName", 12, 2300, "manager"),
+                new Worker("KillerOneName", 50, 2300, "killer"),
+                new Worker("ManagerTwoName", 12, 2300, "manager"),
+                new Worker("TeacherName", 60, 2300, "teacher"));
 
 //        1. Группировка списка рабочих по их должности (деление на списки)
         Map<String, List<Worker>> map1 = workers
@@ -53,6 +53,8 @@ public class ExampleGroupingBy {
                         Collectors.mapping(Worker::getName,
                                 Collectors.joining(", ", "{", "}")))
                 );
+        System.out.println("6. Группировка списка рабочих по их должности, рабочие представлены только именами единой строкой");
+        System.out.println(map6);
 
 
 //        7. Группировка списка рабочих по их должности и по возрасту.
@@ -60,6 +62,9 @@ public class ExampleGroupingBy {
                 .stream()
                 .collect(Collectors.groupingBy(Worker::getPosition,
                         Collectors.groupingBy(Worker::getAge)));
+        System.out.println("7. Группировка списка рабочих по их должности и по возрасту.");
+        System.out.println(collect);
+
 
     }
 }

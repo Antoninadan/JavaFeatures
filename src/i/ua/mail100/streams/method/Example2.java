@@ -17,7 +17,7 @@ public class Example2 {
         Address canadaThree = new Address("Canada", "Victoria", "1000canadaAvenue");
 
         List<Man> list = Arrays.asList(
-                new Man("Ivan", "Ivanenko10", 10, 0, ukraineOne),
+                new Man("Ivan", "Ivanenko10", 16, 0, ukraineOne),
                 new Man("Petro", "Petrenko20", 20, 2, ukraineTwo),
                 new Man("Maria", "Matios50", 50, 1, ukraineTwo),
                 new Man("Natalya", "Natalko60", 60, 0, usaOne),
@@ -28,21 +28,51 @@ public class Example2 {
 
         List<Man> men = new LinkedList<>(list);
 
+        System.out.println("Вывести информацию о всех людях.");
         List<Man> allMans = getAllMan(men);
         print(allMans);
 
+        System.out.println("Вывести информацию о всех адресах");
         List<Address> allManAddresses = getAllManAddresses(men);
         print(allManAddresses);
 
+
+        System.out.println("Вывести firstName, lastName, countOfChildren, когда возраст более или равно 20 и отсортировать по firstName");
         List<String> sortManOver20 = getSortManOver20(men);
         print(sortManOver20);
 
-        System.out.println("setUkraineManAsJohn");
+
+        System.out.println("Изменить firstName = 'John', lastName = 'Kennedi', countOfChildren = 3, когда country == 'US' (or another country)");
         setUkraineManAsJohn(men);
         print(men);
+        men.set(0, new Man("Ivan", "Ivanenko10", 16, 0, ukraineOne));
+        men.set(1, new Man("Petro", "Petrenko20", 20, 2, ukraineTwo));
+        men.set(2, new Man("Maria", "Matios50", 50, 1, ukraineTwo));
+        System.out.println("Return to initial state:");
+        print(men);
 
+
+        System.out.println("Вывести firstName, lastName, nameOfStreet, когда country == 'Canada' AND numberOfHome == 3 OR age >= 25");
         List<String> canadaManOver25Children3 = getCanadaManChildren3OrOver25(men);
         print(canadaManOver25Children3);
+
+
+        System.out.println("Сгруппировать людей по количеству детей и вывести количество");
+        Map<Integer, Long> mapGroupingAmountOfChildrenAndCount =
+                getGroupingAmountOfChildrenAndCount(men);
+        System.out.println(mapGroupingAmountOfChildrenAndCount);
+
+
+        System.out.println("Сгруппировать людей по количеству детей и возрасту и вывести количество");
+        Map<Integer, Map<Integer, Long>> mapGroupingAmountOfChildrenPlusAgeAndCount =
+                getGroupingAmountOfChildrenPlusAgeAndCount(men);
+        System.out.println(mapGroupingAmountOfChildrenPlusAgeAndCount);
+
+
+        System.out.println("Сгруппировать людей по городу и названию улицы и вывести количество");
+        Map<String, Map<String, Long>> mapGroupingCityPlusStreetAndCount =
+        getGroupingCityPlusStreetAndCount(men);
+        System.out.println(mapGroupingCityPlusStreetAndCount);
 
     }
 
@@ -87,12 +117,25 @@ public class Example2 {
                 .collect(Collectors.toList());
     }
 
-    public static Map<Integer, Long> getGroupingCountOfChildrenAndCount(List<Man> men) {
+    public static Map<Integer, Long> getGroupingAmountOfChildrenAndCount(List<Man> men) {
         return men.stream()
                 .collect(Collectors.groupingBy(Man::getCountOfChildren, Collectors.counting()));
     }
 
 
+    public static Map<Integer, Map<Integer, Long>> getGroupingAmountOfChildrenPlusAgeAndCount(List<Man> men) {
+        return men.stream()
+                .collect(Collectors.groupingBy(Man::getCountOfChildren,
+                        Collectors.groupingBy(Man::getAge, Collectors.counting())));
+    }
+
+
+    public static Map<String, Map<String, Long>> getGroupingCityPlusStreetAndCount(List<Man> men) {
+        return men.stream()
+                .map(e -> e.getAddress())
+                .collect(Collectors.groupingBy(Address::getCity,
+                        Collectors.groupingBy(Address::getStreet, Collectors.counting())));
+    }
 }
 
 class Man {

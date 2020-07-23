@@ -1,6 +1,9 @@
 package i.ua.mail100.streams.method;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Example2 {
@@ -25,16 +28,12 @@ public class Example2 {
 
         List<Man> men = new LinkedList<>(list);
 
-        System.out.println("Вывести информацию о всех людях.");
         List<Man> allMans = getAllMan(men);
         print(allMans);
 
-        System.out.println("Вывести информацию о всех адресах");
         List<Address> allManAddresses = getAllManAddresses(men);
         print(allManAddresses);
 
-
-        System.out.println("Вывести firstName, lastName, countOfChildren, когда возраст более или равно 20 и отсортировать по firstName");
         List<String> sortManOver20 = getSortManOver20(men);
         print(sortManOver20);
 
@@ -42,89 +41,9 @@ public class Example2 {
         System.out.println("Изменить firstName = 'John', lastName = 'Kennedi', countOfChildren = 3, когда country == 'US' (or another country)");
         setUkraineManAsJohn(men);
         print(men);
-        men.set(0, new Man("Ivan", "Ivanenko10", 16, 0, ukraineOne));
-        men.set(1, new Man("Petro", "Petrenko20", 20, 2, ukraineTwo));
-        men.set(2, new Man("Maria", "Matios50", 50, 1, ukraineTwo));
-        System.out.println("Return to initial state:");
-        print(men);
 
-
-        System.out.println("Вывести firstName, lastName, nameOfStreet, когда country == 'Canada' AND numberOfHome == 3 OR age >= 25");
         List<String> canadaManOver25Children3 = getCanadaManChildren3OrOver25(men);
         print(canadaManOver25Children3);
-
-
-        System.out.println("Сгруппировать людей по количеству детей и вывести количество");
-        Map<Integer, Long> mapGroupingAmountOfChildrenAndCount =
-                getGroupingAmountOfChildrenAndCount(men);
-        System.out.println(mapGroupingAmountOfChildrenAndCount);
-
-
-        System.out.println("Сгруппировать людей по количеству детей и возрасту и вывести количество");
-        Map<Integer, Map<Integer, Long>> mapGroupingAmountOfChildrenPlusAgeAndCount =
-                getGroupingAmountOfChildrenPlusAgeAndCount(men);
-        System.out.println(mapGroupingAmountOfChildrenPlusAgeAndCount);
-
-
-        System.out.println("Сгруппировать людей по городу и названию улицы и вывести количество");
-        Map<String, Map<String, Long>> mapGroupingCityPlusStreetAndCount =
-                getGroupingCityPlusStreetAndCount(men);
-        System.out.println(mapGroupingCityPlusStreetAndCount);
-
-
-        /////////
-        Map<String, Map<String, Long>> map = new HashMap<>();
-
-        Map<String, Long> map1 = new HashMap<>();
-        map1.put("one", 1L);
-        map1.put("two", 2L);
-        map1.put("three", 3L);
-
-        Map<String, Long> map2 = new HashMap<>();
-        map2.put("2one", 1L);
-        map2.put("2two", 2L);
-        map2.put("2three", 3L);
-        map2.entrySet().stream().filter((v) -> v.getValue() >= 2L).forEach(y -> System.out.println(y));
-
-
-        map.put("one string", map1);
-        map.put("two string", map2);
-
-        System.out.println();
-        System.out.println(map);
-        System.out.println();
-/*
-        map.entrySet()
-                .stream()
-                .map(x -> x.getValue())
-                .filter(y ->
-                        { for (Map.Entry <String, Long> each:y.entrySet()) {
-                            System.out.println(each);
-                        each.getValue();
-                        }
-
-                        }
-
-                )
-//                .filter(y -> y.entrySet())
-//                .
-//                .filter(y->)
-                .forEach(x -> System.out.println("654"));*/
-
-//
-//                .entrySet().stream().filter((v) -> v.getValue() >= 2L).forEach(y -> System.out.println(y))
-//
-//        .filter(v -> v.entrySet().stream().filter((v) -> v.getValue() >= 4));
-//
-//                .map(x -> x.getValue())
-//                .map(x -> x.entrySet())
-//
-//                .filter(m -> m. = 4);
-//
-//        Map<String, Long> m = map.entrySet()
-//                .stream()
-//                .map(x -> x.getValue()).collect(Collectors.collectingAndThen(toM));
-
 
     }
 

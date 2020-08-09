@@ -1,7 +1,10 @@
 package i.ua.mail100.streams.method;
 
+import java.io.Serializable;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Example2 {
     public static void main(String[] args) {
@@ -130,14 +133,24 @@ public class Example2 {
     }
 
 
-    public static <T> void print(List<T> list) {
-        list.forEach(e -> System.out.println(e));
+    //    public static <T> void print(List<? super Man> list) {
+//    public static <T extends Man> void print(List<T> list) {
+//    public static <T extends Serializable> void print(List<T> list) {
+    public static void print(List<?> list) {
+//        list.forEach(e -> System.out.println(e));
+
+        list.forEach(System.out::println);
         System.out.println();
     }
 
+//    public static void print(List<?> list) {
+
+
     public static List<Man> getAllMan(List<Man> men) {
-        return men.stream()
+        List<Man> list = men.stream()
                 .collect(Collectors.toList());
+        print(list);
+        return list;
     }
 
     public static List<Address> getAllManAddresses(List<Man> men) {
@@ -156,8 +169,8 @@ public class Example2 {
 
     public static void setUkraineManAsJohn(List<Man> men) {
         men.stream()
-                .filter(e -> e.getAddress().getCountry() == "Ukraine")
-                .forEach(e -> {
+                .filter(e -> e.getAddress().getCountry().equals("Ukraine"))
+                .peek(e -> {
                     e.setFirstName("Jhon");
                     e.setLastName("Kennedi");
                     e.setCountOfChildren(3);
@@ -166,7 +179,7 @@ public class Example2 {
 
     public static List<String> getCanadaManChildren3OrOver25(List<Man> men) {
         return men.stream()
-                .filter(e -> e.getAddress().getCountry() == "Canada" && e.getCountOfChildren() == 3 || e.getAge() >=25)
+                .filter(e -> e.getAddress().getCountry() == "Canada" && e.getCountOfChildren() == 3 || e.getAge() >= 25)
                 .map(e -> (e.getFirstName() + ", " + e.getLastName() + ", " + e.getAddress().getStreet()))
                 .collect(Collectors.toList());
     }
@@ -199,6 +212,50 @@ public class Example2 {
 //                .entrySet()
 //                .stream()
 //                .filter(m -> m.getValue().entrySet().stream().filter( x-> x.getValue()>=4) == true);
+    }
+
+    public static void getGroupingCityPlusStreetAndCountWhereMenMore41(List<Man> men) {
+
+        class ForUse {
+            private String city;
+            private String street;
+
+            public ForUse(String city, String street) {
+                this.city = city;
+                this.street = street;
+            }
+
+            public String getCity() {
+                return city;
+            }
+
+            public String getStreet() {
+                return street;
+            }
+
+            @Override
+            public String toString() {
+                return "ForUse{" +
+                        "city='" + city + '\'' +
+                        ", street='" + street + '\'' +
+                        '}';
+            }
+        }
+
+       men.stream()
+                .map(e -> e.getAddress())
+                .collect(Collectors.groupingBy(a -> new ForUse(a.getCity(), a.getStreet()), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue() > 4)
+                .forEach(e -> System.out.println(e.getKey()));
+
+        sendLambdas(s -> System.out.println(s));
+
+    }
+
+    public static void sendLambdas(Consumer<String> stringConsumer) {
+
     }
 
 

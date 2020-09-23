@@ -40,10 +40,11 @@ public class BigDecimalRunner {
         BigDecimal x = new BigDecimal("1.5");
         BigDecimal y = new BigDecimal("1.50");
         BigDecimal z = new BigDecimal("1.5");
+        BigDecimal q = new BigDecimal("1.5000");
 
         System.out.println(x.equals(y));
         System.out.println(x.equals(z));
 
-        System.out.println(x.compareTo(y));
+        System.out.println(x.compareTo(q));
     }
 }

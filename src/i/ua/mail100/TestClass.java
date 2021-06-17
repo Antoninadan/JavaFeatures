@@ -1,17 +1,17 @@
 package i.ua.mail100;
 
 public class TestClass {
-    private int a;
+    private int f;
 
-    public TestClass(int a) {
-        this.a = a;
+    public TestClass(int f) {
+        this.f = f;
     }
 
-    public int getA() {
-        return a;
+    public int getF() {
+        return f;
     }
 
-    public void setA(int a) {
-        this.a = a;
+    public void setF(int f) {
+        this.f = f;
     }
 }

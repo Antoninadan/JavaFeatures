@@ -24,7 +24,7 @@ public class StaticClassTest {
     }
 
     static void workClass(TestClass testClass){
-        testClass.setA(1111);
+        testClass.setF(1111);
     }
 
     public static void main(String[] args) {

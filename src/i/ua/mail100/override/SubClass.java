@@ -7,7 +7,7 @@ import java.util.List;
 public class SubClass extends SuperClass{
     // allow widen access
     @Override
-    public ArrayList<Integer> methodList(int b, String a){
+    public ArrayList<Integer> protectedMethodList(int b, String a){
         return new ArrayList<>();
     }
 

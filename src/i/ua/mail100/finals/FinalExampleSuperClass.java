@@ -8,6 +8,11 @@ import java.util.stream.Stream;
 
 public class FinalExampleSuperClass {
     final int int1;
+    static final int int2;
+
+    static {
+        int2 = 1;
+    }
 
     public FinalExampleSuperClass(int int1) {
         this.int1 = int1;

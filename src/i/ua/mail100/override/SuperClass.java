@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SuperClass {
 
-    List<Integer> methodList(int a, String b){
+    List<Integer> protectedMethodList(int a, String b){
         return new ArrayList<>();
     }
 

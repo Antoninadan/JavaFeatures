@@ -1,17 +1,29 @@
 package i.ua.mail100.innerclasses;
 
 public class AnonymousInnerClassExample {
+
     static Demo demo = new Demo() {
         @Override
         public void show() {
             super.show();
-            System.out.println("Метод внутреннего анонимного класса");
+            System.out.println("override demo");
         }
     };
 
-    static Hello h = new Hello() {
+    static InterfaceDemo h = new InterfaceDemo() {
         public void show() {
-            System.out.println("Метод внутреннего анонимного класса");
+            System.out.println("Метод h");
+        }
+    };
+
+    static InterfaceDemo h2 = () -> {
+            System.out.println("Метод h2");
+    };
+
+    static AbstractClass abstractClass = new AbstractClass() {
+        @Override
+        public void show() {
+
         }
     };
 
@@ -27,6 +39,10 @@ class Demo {
     }
 }
 
-interface Hello {
+interface InterfaceDemo {
     void show();
+}
+
+abstract class AbstractClass{
+    abstract public void show();
 }

@@ -30,6 +30,13 @@ public class SuperClass {
         return new ArrayList<>();
     }
 
+    SuperClass methodReturnSuperClass(){
+        return new SuperClass();
+    }
+
+    SubClass methodReturnSubClass(){
+        return new SubClass();
+    }
 
     Integer methodThrowsException(int a, String b) throws Exception {
         return 4;

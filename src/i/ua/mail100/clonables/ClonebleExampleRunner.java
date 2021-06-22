@@ -15,8 +15,11 @@ public class ClonebleExampleRunner {
             e.printStackTrace();
         }
 
+        // this is standart clonable effect. If you want really clone - you need realize this specially
         clonableExampleClass1.setS("Bebebe");
         System.out.println("c1 = " + clonableExampleClass1);
         System.out.println("c2 = " + clonableExampleClass2);
+
+
     }
 }

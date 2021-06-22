@@ -2,10 +2,11 @@ package i.ua.mail100.interfaces;
 
 import i.ua.mail100.reflection.ReflectionExample;
 
-public interface InterfaceExample extends Comparable {
+interface InterfaceExample extends Comparable {
     public static final int FIELD1 = 1;
     int FIELD2 = 1;  // public static final
     String string = "kjbbkjb";
+
 
     public abstract void publicAbstractMethod(); // public abstract
 

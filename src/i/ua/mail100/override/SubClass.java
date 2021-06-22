@@ -17,6 +17,12 @@ public class SubClass extends SuperClass{
         return new ArrayList<>();
     }
 
+    @Override
+    SubClass methodReturnSuperClass() {
+        return new SubClass();
+    }
+
+
     // allow delete throws
     @Override
     Integer methodThrowsException(int b, String a) throws IOException{

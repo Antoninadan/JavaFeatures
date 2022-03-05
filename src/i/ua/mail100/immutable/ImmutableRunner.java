@@ -7,8 +7,15 @@ public class ImmutableRunner {
         String newName = name.replace("dung", "----");
         System.out.println("baeldung".equals(name));       // true
         System.out.println("bael----".equals(newName));    // true
+        System.out.println();
 
-
+        // true exmpl
+        System.out.println("StringBuffer changes!!");
+        StringBuffer nameSB = new StringBuffer("baeldungStringBuffer");
+        StringBuffer newNameSB = nameSB.append("----");
+        System.out.println("baeldungStringBuffer".equals(nameSB.toString()));       // false
+        System.out.println("baeldungStringBuffer----".equals(newNameSB.toString()));    // true
+        System.out.println();
 
         // not true
         String str1 = "I love Java";
@@ -16,7 +23,9 @@ public class ImmutableRunner {
         System.out.println(str2);
         str1 = "I love Python";//но поведение str1 никак не влияет на str2
         System.out.println(str2);//str2 продолжает указывать на строку "I love Java", хотя str1 уже указывает на другой объект
+        System.out.println();
 
+        System.out.println("All wrappers are immutable");
         Integer integerLiteral1 = 1;
         Integer integerLiteral2 = integerLiteral1;
         System.out.println(integerLiteral2);
